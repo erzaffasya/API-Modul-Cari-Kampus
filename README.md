@@ -5,9 +5,8 @@ setelah clone projek jalankan pada terminal di projek:
 2. cp .env.example .env
 3. setting .env sesuai dengan settingan pc (pastikan database sudah dibuat dan sesuai)
 3. php artisan migrate --seed
-
-Cara Menjalankan server:
-php -S localhost:8000 -t public
+4. php artisan jwt:secret
+5. php -S localhost:8000 -t public  (untuk menjalankan server)
 
 
 List Route:
