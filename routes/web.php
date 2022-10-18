@@ -17,10 +17,12 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 $router->group(['prefix' => 'api'], function ($router) {
+    //Login
     $router->post('login', 'AuthController@login');
-    $router->post('logout', 'AuthController@logout');
 });
 $router->group(['prefix' => 'api', 'middleware' => 'auth'], function ($router) {
+    //Logout
+    $router->post('logout', 'AuthController@logout');
 
     //Lihat Data Kampus
     $router->get('kampus', 'KampusController@index');
