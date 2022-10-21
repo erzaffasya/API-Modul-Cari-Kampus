@@ -18,6 +18,7 @@ class FollowKampusTable extends Migration
             $table->foreignId("kampus_id")->nullable()->constrained("kampus")->onDelete("cascade")->onUpdate("cascade");
             $table->foreignId("users_id")->nullable()->constrained("users")->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

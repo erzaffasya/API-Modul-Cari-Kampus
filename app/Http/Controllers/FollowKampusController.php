@@ -36,4 +36,10 @@ class FollowKampusController extends Controller
             return $this->successResponse('Favorit Kampus Berhasil Dihapuskan');
         }
     }
+
+    public function riwayatHapus(){
+        // return Auth::id();
+        $user = FollowResource::collection(FollowKampus::where('users_id',Auth::id())->onlyTrashed()->get());
+        return $this->successResponse($user);
+    }
 }

@@ -16,10 +16,12 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
 $router->group(['prefix' => 'api'], function ($router) {
     //Login
     $router->post('login', 'AuthController@login');
 });
+
 $router->group(['prefix' => 'api', 'middleware' => 'auth'], function ($router) {
     //Logout
     $router->post('logout', 'AuthController@logout');
@@ -33,7 +35,8 @@ $router->group(['prefix' => 'api', 'middleware' => 'auth'], function ($router) {
     $router->get('mengikuti-kampus', 'FollowKampusController@index');
     //Mengikuti Kampus
     $router->post('mengikuti-kampus/{data}', 'FollowKampusController@store');
-
+    //Riwayat Mengikuti Kampus
+    $router->get('riwayat-mengikuti-kampus', 'FollowKampusController@riwayatHapus');
 
     //Lihat Jurusan
     $router->get('{data}/jurusan', 'JurusanController@index');
