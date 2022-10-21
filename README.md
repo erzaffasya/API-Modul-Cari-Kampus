@@ -51,7 +51,9 @@ List Route:
     #Lihat Mengikuti Kampus:
     http://localhost:8000/api/mengikuti-kampus  -> Method GET + Bearer Token
     
-
+    #Lihat Riwayat Mengikuti Kampus:
+    http://localhost:8000/api/riwayat-mengikuti-kampus -> Methid GET + Bearer Token
+    
     #Lihat Jurusan:
     Bisnis Rule : 
     1. Jika data kampus tersebut tidak tersedia, maka response error
